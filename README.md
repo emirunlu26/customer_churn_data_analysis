@@ -66,4 +66,4 @@ To evaluate the performance of the model, I have utilized the following structur
 * Precision
 * Recall
 
-### 6. Exploratory Data Analysis
+### 7. Exploratory Data Analysis

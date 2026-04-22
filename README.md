@@ -46,18 +46,20 @@ To ensure data quality, the following steps are performed:
 
 * Duplicate Removal: Checking for and removing any redundant records.
 
-* Handling Missing Values: Identifying and managing NaN values across critical all features.
+* Missing Value Treatment: Identifying and managing NaN values across critical features.
 
 * Data Type Conversion: Applying type conversion to represent the features better.
 
+* Outlier Treatment: Identifying and treating outliers accordingly
+
 ### 3. One-Hot Encoding
-Encoding categorical features so that prediction model can process these features accurately.
+Categorical features are encoded so that prediction model can process these features accurately.
 
-### 4. Training Customer Churn Prediction Model
-Decision trees are ideal in this scenario as they work well with huge datasets. In addition, the algorithm is transparent as one can understand the logic behind the class selection clearly thanks to its condition-based structure. I've used GridSearchCV to apply hyperparameter tuning to get the optimal values for the maximum tree depth and criterion.
+### 4. Feature Scaling
+Features are scaled by performing standardization. This enables scale-sensitive models like K-nearest-neighbor and logistic regression with regularization to perform better.
 
-### 5. Monitoring Feature Importances
-In the next step, I have sorted the features by their contribution to the classification in descending order. This way, I was able to see the features from most important to least important.
+### 5. Building Customer Churn Prediction Model
+To find the model with the optimal prediction performance, I performed grid search cross validation in which the performance of different models - such as random forest, K-nearest-neighbor and logistic regression - with different hyperparameter settings are validated. The model with the highest validation score is then trained on the entire training set and its performance is tested using the test set. Lastly, the model is trained on the entire dataset so that the model can utilize additional data to increase its performance.
 
 ### 6. Evaluating Model Performance
 To evaluate the performance of the model, I have utilized the following structures/metrics:
